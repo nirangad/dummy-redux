@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url("assets/fonts/Ubuntu-Regular.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("assets/fonts/Ubuntu-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("assets/fonts/Ubuntu-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("assets/fonts/Ubuntu-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Ubuntu";
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 7px;
+  width: 200px;
+  margin-right: 5px;
+  border: none;
+}
+
+button {
+  padding: 10px;
+  border-radius: 7px;
+  min-width: 100px;
+  font-weight: bold;
+  border: none;
+}
+
+button.blue {
+  background-color: #1f79b4;
+  color: #cecece;
+}
