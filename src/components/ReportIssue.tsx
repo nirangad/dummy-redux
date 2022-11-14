@@ -1,20 +1,42 @@
-import './ReportIssue.css'
-import store from '../store'
+import "./ReportIssue.css";
+import store from "../store";
+import { useState } from "react";
 
-function ReportIssue() {
-
-  console.log("Store:", store);
+export default function ReportIssue() {
+  const [issueField, setIssueField] = useState({
+    desc: "",
+  });
+  const issueFieldHandler = (e: any) => {
+    let value = e.target.value;
+    setIssueField({ ...issueField, desc: value });
+  };
 
   function addIssue() {
-    console.log('Add Issue pressed');
+    if (!issueField || !issueField.desc) {
+      return;
+    }
+
+    console.log('Before Adding: ', store.getState());
+    store.dispatch({
+      type: "bugAdded",
+      payload: {
+        description: issueField.desc,
+      },
+    });
   }
 
   return (
     <div className="report-issue">
-      <input type="text" name="new-issue" placeholder='Type your Issue' />
-      <button className='blue' onClick={addIssue} >Add</button>
+      <input
+        type="text"
+        name="new-issue"
+        placeholder="Type your Issue"
+        value={issueField.desc}
+        onChange={issueFieldHandler}
+      />
+      <button className="blue" onClick={addIssue}>
+        Add
+      </button>
     </div>
-  )
+  );
 }
-
-export default ReportIssue

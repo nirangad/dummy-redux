@@ -1,15 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import ReportIssue from './components/ReportIssue'
 import IssueList from './components/IssueList'
+import store from './store';
 
 function App() {
-
   return (
     <div className="app">
       <h1>Issue Tracker</h1>
-      <ReportIssue/>
+      <ReportIssue />
       <IssueList/>
     </div>
   )

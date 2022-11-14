@@ -1,15 +1,19 @@
-import './IssueList.css'
+import "./IssueList.css";
+import Issue from "./Issue";
+import store from "../store";
+import { IssueType } from "../types/issue.type";
+import { useState } from "react";
 
-function IssueList() {
-
+export default function IssueList() {
+  const [issueList, setIssueList] = useState(store.getState())
+  store.subscribe(() => {
+    setIssueList(store.getState());
+  });
   return (
-    <div className="issue-list">
-      <span>Issue 01</span>
-      <span>Issue 02</span>
-      <span>Issue 03</span>
-      <span>Issue 04</span>
+    <div className='issue-list'>
+      {issueList.map((issue: IssueType) => {
+        return <Issue issue={issue} />;
+      })}
     </div>
-  )
+  );
 }
-
-export default IssueList

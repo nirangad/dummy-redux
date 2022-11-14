@@ -1,11 +1,11 @@
-import { Action } from "../types/action.type";
-import { Issue } from "../types/issue.type";
+import { ActionType } from "../types/action.type";
+import { IssueType } from "../types/issue.type";
 
 let bugCounter = 0;
 
 export default function reducer(
-  state: Issue[] = [],
-  action: Action
+  state: IssueType[] = [],
+  action: ActionType
 ) {
   switch (action.type) {
     case "bugAdded":
@@ -19,16 +19,16 @@ export default function reducer(
       ];
 
     case "bugRemoved":
-      return state.filter((bug: Issue) => bug.id != action.payload.id);
+      return state.filter((bug: IssueType) => bug.id != action.payload.id);
 
     case "bugResolved":
-      const resolvedBug: any = state.find((bug: Issue) => {
+      const resolvedBug: any = state.find((bug: IssueType) => {
         return bug.id == action.payload.id;
       });
 
       if (!resolvedBug) return state;
 
-      let rest = state.filter((bug: Issue) => bug.id != action.payload.id);
+      let rest = state.filter((bug: IssueType) => bug.id != action.payload.id);
 
       const updated = [{ ...resolvedBug, resolved: true }, ...rest];
       return updated;

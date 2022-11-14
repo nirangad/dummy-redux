@@ -1,11 +1,5 @@
 .issue-list {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-}
-.issue-list span {
-  padding: 10px;
-  margin: 4px;
-  border-radius: 5px;
-  background-color: #8b939c;
 }

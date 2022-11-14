@@ -1,4 +1,4 @@
-export type Action = {
+export type ActionType = {
   type: string;
   payload: any;
 }
