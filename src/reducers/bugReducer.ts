@@ -1,5 +1,6 @@
 import { ActionType } from "../types/action.type";
 import { IssueType } from "../types/issue.type";
+import * as actions from './actions'
 
 let bugCounter = 0;
 
@@ -8,7 +9,7 @@ export default function reducer(
   action: ActionType
 ) {
   switch (action.type) {
-    case "bugAdded":
+    case actions.BUG_ADDED:
       return [
         ...state,
         {
@@ -18,10 +19,10 @@ export default function reducer(
         },
       ];
 
-    case "bugRemoved":
+    case actions.BUG_REMOVED:
       return state.filter((bug: IssueType) => bug.id != action.payload.id);
 
-    case "bugResolved":
+    case actions.BUG_RESOLVED:
       const resolvedBug: any = state.find((bug: IssueType) => {
         return bug.id == action.payload.id;
       });

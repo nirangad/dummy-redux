@@ -12,7 +12,7 @@ export default function IssueList() {
   return (
     <div className='issue-list'>
       {issueList.map((issue: IssueType) => {
-        return <Issue issue={issue} />;
+        return <Issue key={issue.id} issue={issue} />;
       })}
     </div>
   );
