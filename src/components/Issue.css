@@ -1,7 +1,19 @@
-span {
+div.issue {
   border-radius: 5px;
   background-color: #494949;
   color: #F2F2F2;
   padding: 12px;
   margin: 4px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.issue.done {
+  background-color: #4638fd;
+}
+
+.hide {
+  display: none;
 }

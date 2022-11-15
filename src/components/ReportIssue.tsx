@@ -1,6 +1,7 @@
 import "./ReportIssue.css";
 import store from "../store";
 import { useState } from "react";
+import * as actions from '../reducers/actions'
 
 export default function ReportIssue() {
   const [issueField, setIssueField] = useState({
@@ -16,9 +17,8 @@ export default function ReportIssue() {
       return;
     }
 
-    console.log('Before Adding: ', store.getState());
     store.dispatch({
-      type: "bugAdded",
+      type: actions.BUG_ADDED,
       payload: {
         description: issueField.desc,
       },

@@ -31,7 +31,7 @@ export default function reducer(
 
       let rest = state.filter((bug: IssueType) => bug.id != action.payload.id);
 
-      const updated = [{ ...resolvedBug, resolved: true }, ...rest];
+      const updated = [...rest, { ...resolvedBug, resolved: true }];
       return updated;
 
     default:
